@@ -90,3 +90,16 @@ void DonorManager::displayAllDonors() const {
     fileHandler.displayAllDonors();
     ui.waitForKeyPress();
 }
+
+//Este método recorre la lista de donantes para la clase de las estadísticas
+std::vector<Donor> DonorManager::getAllDonors() const {
+    std::ifstream inFile(fileName);
+    std::vector<Donor> donors;
+    std::string line;
+
+    while (std::getline(inFile, line)) {
+        donors.push_back(Donor::parseLine(line));
+    }
+
+    return donors;
+}
