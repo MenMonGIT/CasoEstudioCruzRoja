@@ -28,6 +28,9 @@ public:
 
     // Muestra todos los donantes registrados
     void displayAllDonors() const;
+
+    // Devuelve todos los donantes, esto se utiliza para las estadísticas
+    std::vector<Donor> getAllDonors() const;
 };
 
 #endif
